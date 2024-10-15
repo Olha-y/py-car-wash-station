@@ -44,7 +44,8 @@ class CarWashStation:
     def rate_service(self, rating: int | float) -> float:
         """Updates the average rating based on a new customer rating."""
         self.count_of_ratings += 1
-        total_previous_ratings = self.average_rating * (self.count_of_ratings - 1)
+        total_previous_ratings = (self.average_rating
+                                  * (self.count_of_ratings - 1))
         total_ratings_with_new = total_previous_ratings + rating
         new_average_rating = total_ratings_with_new / self.count_of_ratings
         self.average_rating = round(new_average_rating, 1)
